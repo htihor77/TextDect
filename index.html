@@ -3,72 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download My App</title>
+    <title>Text App</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a2e;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
         }
 
         .container {
             text-align: center;
-            color: #fff;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            background-color: #ff4757;
+            font-size: 5rem;
+            font-weight: bold;
+            text-transform: uppercase;
             color: #fff;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.5rem;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
+            letter-spacing: 10px;
+            position: relative;
+            animation: glow 1.5s infinite alternate;
         }
 
-        .btn:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
-            background-color: #ff6b81;
+        /* Creating the cool neon 3D effect */
+        h1::before, 
+        h1::after {
+            content: "TEXT APP";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
 
-        .btn:active {
-            transform: translateY(2px);
+        /* Cool Blue Neon Shadow */
+        h1::before {
+            color: #00f7ff;
+            transform: translate(-5px, -5px);
+            filter: blur(15px);
         }
 
-        .logo {
-            width: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        /* Cool Pink Neon Shadow */
+        h1::after {
+            color: #ff0077;
+            transform: translate(5px, 5px);
+            filter: blur(15px);
+        }
+
+        /* Neon Glow Animation */
+        @keyframes glow {
+            0% {
+                text-shadow: 
+                    0 0 10px #00f7ff, 
+                    0 0 20px #00f7ff, 
+                    0 0 30px #00f7ff;
+            }
+            100% {
+                text-shadow: 
+                    0 0 20px #ff0077, 
+                    0 0 40px #ff0077, 
+                    0 0 60px #ff0077;
+            }
+        }
+
+        /* Subtext - Description under the main heading */
+        p {
+            color: #dcdcdc;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-shadow: 0 0 10px #00f7ff;
+        }
+
+        /* Add a subtle border effect */
+        .container {
+            border: 2px solid #ff0077;
+            padding: 50px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #1a1a2e, #2a2a3e);
+            box-shadow: 0 0 20px #ff0077;
+        }
+
+        /* Hover effect to enhance glow */
+        h1:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://via.placeholder.com/150" class="logo" alt="App Logo">
-        <h1>My Android App</h1>
+       <h1>TEXT APP</h1>
+        <p>Your smart text detection application.</p>
+
+     
         <p>Click the button below to download my app:</p>
-        <a class="btn" href="https://github.com/htihor77/TextDect/releases/download/v1.0.0/app-debug.apk" download>
+        <a class="btn" href="https://github.com/username/repository-name/releases/download/v1.0/app-debug.apk" download>
             📲 Download APK
         </a>
     </div>
